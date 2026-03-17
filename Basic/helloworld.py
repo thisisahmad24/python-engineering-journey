@@ -1,0 +1,23 @@
+print ('Hello World!')
+print ('Welcome to Python Programming!')
+
+print ('Basic Arithmetic Operations:')
+print (1+3)
+print (10-2)
+print (5*4)
+print (20/5)
+print (10%3)
+print (2**3)
+print (10//3)
+
+
+print ('Data Types in Python:')
+print (type(10))
+print (type(3.14))
+print (type('Hello'))
+print (type(True))
+print (type(1+2j))
+print (type([1, 2, 3]))
+print (type((1, 2, 3)))
+print (type({'name': 'Alice', 'age': 30}))
+print (type({1, 2, 3}))
