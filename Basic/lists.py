@@ -18,10 +18,11 @@ mixed_list = [1, "Hello", 3.14, True]
 print(mixed_list)
 
 # List of lists (2D list)
-matrix = [[1, 2, 3], 
-          [4, 5, 6], 
-          [7, 8, 9]
-        ]
+matrix = [
+    [1, 2, 3], 
+    [4, 5, 6], 
+    [7, 8, 9]
+    ]
 print(matrix)
 
 # List comprehension to create a new list
