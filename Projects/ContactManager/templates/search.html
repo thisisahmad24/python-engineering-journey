@@ -1,0 +1,14 @@
+<h2>Search Contact</h2>
+
+<form method="post">
+  Name: <input type="text" name="name">
+  <button type="submit">Search</button>
+</form>
+
+{% if result %}
+  <ul>
+  {% for c in result %}
+    <li>{{ c.name }} - {{ c.phone }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
