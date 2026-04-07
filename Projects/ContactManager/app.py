@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 from storage import load_contacts, save_contacts
 
 app = Flask(__name__)
-
+app.secret_key = "secret"   # required for flash messages
 
 @app.route("/")
 def index():
@@ -20,6 +20,7 @@ def add():
         contacts.append({"name": name, "phone": phone})
         save_contacts(contacts)
 
+        flash("Contact added successfully!")
         return redirect("/")
 
     return render_template("add.html")

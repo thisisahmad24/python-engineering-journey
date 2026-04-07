@@ -1,13 +1,56 @@
-<h1>Contact Manager</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
 
-<a href="/add">Add Contact</a>
-<a href="/search">Search</a>
+<div class="container mt-5">
 
-<ul>
-{% for c in contacts %}
-  <li>
-    {{ c.name }} - {{ c.phone }}
-    <a href="/delete/{{ c.name }}">Delete</a>
-  </li>
-{% endfor %}
-</ul>
+    <!-- 🔔 Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-success text-center">
+          {{ messages[0] }}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- 🧾 Title -->
+    <h1 class="text-center mb-4">📞 Contact Manager</h1>
+
+    <!-- 🔘 Buttons -->
+    <div class="d-flex justify-content-between mb-3">
+        <a href="/add" class="btn btn-success">➕ Add Contact</a>
+        <a href="/search" class="btn btn-info">🔍 Search</a>
+    </div>
+
+    <!-- ⚠️ Empty State -->
+    {% if not contacts %}
+        <div class="alert alert-warning text-center">
+            No contacts found. Add your first contact!
+        </div>
+    {% endif %}
+
+    <!-- 📋 Contact List -->
+    <ul class="list-group">
+        {% for c in contacts %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="fw-bold">{{ c.name }}</span>
+            <span>{{ c.phone }}</span>
+
+            <!-- ❌ Delete with confirmation -->
+            <a href="/delete/{{ c.name }}" 
+               onclick="return confirm('Are you sure you want to delete this contact?')" 
+               class="btn btn-danger btn-sm">
+               Delete
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+</body>
+</html>
