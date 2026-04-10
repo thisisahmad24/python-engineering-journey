@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Expense Tracker</title>
+    <title>Expense Analyzer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-dark text-light">
 
 <div class="container mt-5">
 
-    <h1 class="text-center mb-4">💰 Expense Tracker</h1>
-
+    <!-- Flash Messages -->
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         <div class="alert alert-success text-center">
@@ -18,21 +18,79 @@
       {% endif %}
     {% endwith %}
 
-    <div class="d-flex justify-content-between mb-3">
-        <h4>Total: Rs {{ total }}</h4>
-        <a href="/add" class="btn btn-success">Add Expense</a>
+    <!-- Title -->
+    <h1 class="text-center mb-4">💰 Smart Expense Analyzer</h1>
+
+    <!-- ANALYTICS SECTION -->
+
+    <!-- Total + Highest -->
+    <div class="card bg-secondary text-light p-3 mb-4">
+        <h4>Total Spending: Rs {{ total }}</h4>
+        <h5>Highest Category: {{ highest }}</h5>
     </div>
+
+    <!-- Category Breakdown -->
+    <div class="card bg-dark border-light p-3 mb-4">
+        <h5>Category Breakdown</h5>
+
+        {% if category_percent %}
+        <ul class="list-group">
+            {% for cat, percent in category_percent.items() %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>{{ cat }}</span>
+                    <span>{{ percent }}%</span>
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No data available.</p>
+        {% endif %}
+    </div>
+
+    <!--Insights -->
+    <div class="card bg-danger text-light p-3 mb-4">
+        <h5>Insights</h5>
+
+        {% if insights %}
+            {% for i in insights %}
+                <p>{{ i }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No insights yet.</p>
+        {% endif %}
+    </div>
+
+    <!-- Actions -->
+    <div class="d-flex justify-content-between mb-3">
+        <a href="/add" class="btn btn-success">➕ Add Expense</a>
+    </div>
+
+    <!--Expense List -->
+    {% if not expenses %}
+        <div class="alert alert-warning text-center">
+            No expenses found. Start adding!
+        </div>
+    {% endif %}
 
     <ul class="list-group">
         {% for e in expenses %}
-        <li class="list-group-item d-flex justify-content-between">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            
             <div>
-                <strong>{{ e.category }}</strong> - {{ e.amount }} <br>
+                <div class="fw-bold text-dark">{{ e.category }}</div>
+                <div class="text-muted">Rs {{ e.amount }}</div>
                 <small>{{ e.desc }}</small>
+                <br>
+                <small class="text-secondary">{{ e.date }}</small>
             </div>
+
+            <!-- Delete -->
             <a href="/delete/{{ loop.index0 }}" 
                onclick="return confirm('Delete this expense?')" 
-               class="btn btn-danger btn-sm">Delete</a>
+               class="btn btn-danger btn-sm">
+               Delete
+            </a>
+
         </li>
         {% endfor %}
     </ul>
