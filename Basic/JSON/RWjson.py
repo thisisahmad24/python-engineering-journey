@@ -1,4 +1,4 @@
-#Read and Write JSON
+#Read and Write JSON(dump,load)
 import json
 data = {"name": "Ahmad", "age": 21, "city": "Lahore"}
 
