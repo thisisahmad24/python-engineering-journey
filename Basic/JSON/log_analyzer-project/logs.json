@@ -1,0 +1,13 @@
+[
+  {"user": "Ahmad", "action": "login", "time": "10:00"},
+  {"user": "Ali", "action": "view", "time": "10:05"},
+  {"user": "Ahmad", "action": "view", "time": "10:06"},
+  {"user": "Sara", "action": "login", "time": "10:07"},
+  {"user": "Ahmad", "action": "logout", "time": "10:10"},
+  {"user": "Ali", "action": "logout", "time": "10:15"},
+  {"user": "Sara", "action": "logout", "time": "10:20"},
+  {"user": "Ahmad", "action": "login", "time": "10:25"},
+  {"user": "Ahmad", "action": "view", "time": "10:30"},
+  {"user": "Ahmad", "action": "logout", "time": "10:35"}
+
+]
