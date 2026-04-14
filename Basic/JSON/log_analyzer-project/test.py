@@ -1,8 +1,8 @@
 from analyzer import *
 
-print(user_activity())
-print(most_active())
-print(action_count())
-print(detect_suspicious())
+print("User Activity:", user_activity())
+print("Most Active:", most_active())
+print("Action Count:", action_count())
+print("Suspicious:", detect_suspicious())
 
-insights()
+advanced_insights()
