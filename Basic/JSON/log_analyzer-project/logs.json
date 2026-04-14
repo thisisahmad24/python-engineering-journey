@@ -1,13 +1,19 @@
 [
   {"user": "Ahmad", "action": "login", "time": "10:00"},
-  {"user": "Ali", "action": "view", "time": "10:05"},
   {"user": "Ahmad", "action": "view", "time": "10:06"},
-  {"user": "Sara", "action": "login", "time": "10:07"},
-  {"user": "Ahmad", "action": "logout", "time": "10:10"},
-  {"user": "Ali", "action": "logout", "time": "10:15"},
-  {"user": "Sara", "action": "logout", "time": "10:20"},
   {"user": "Ahmad", "action": "login", "time": "10:25"},
   {"user": "Ahmad", "action": "view", "time": "10:30"},
-  {"user": "Ahmad", "action": "logout", "time": "10:35"}
+  {"user": "Ahmad", "action": "logout", "time": "10:35"},
+
+  {"user": "Ali", "action": "login", "time": "10:02"},
+  {"user": "Ali", "action": "view", "time": "10:07"},
+  {"user": "Ali", "action": "view", "time": "10:12"},
+  {"user": "Ali", "action": "logout", "time": "10:17"},
+  
+  {"user": "Sara", "action": "login", "time": "10:03"},
+  {"user": "Sara", "action": "view", "time": "10:08"},
+  {"user": "Sara", "action": "view", "time": "10:13"},
+  {"user": "Sara", "action": "view", "time": "10:18"},
+  {"user": "Sara", "action": "logout", "time": "10:23"}
 
 ]
