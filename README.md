@@ -130,14 +130,6 @@ Issue → Branch → Code → Commit → PR → Merge
 Building intelligent systems that combine
 Software Engineering + Data + AI
 
-
-📊 GitHub Stats
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=thisisahmad24&show_icons=true&theme=tokyonight" /> <img src="https://github-readme-streak-stats.herokuapp.com/?user=thisisahmad24&theme=tokyonight" /> </p>
-
-🤝 Connect With Me
-<p align="center"> <a href="https://github.com/thisisahmad24"> <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github"/> </a> </p>
-
-
 ⭐ Final Thought
 This is not just a repository.
 It’s a live proof of my evolution into an engineer.
